@@ -141,6 +141,7 @@ define(['jquery', 'bootstrap', 'toastr', 'layer', 'lang'], function ($, undefine
                     area: area,
                     content: url,
                     zIndex: Layer.zIndex,
+                    successCallback:null,
                     success: function (layero, index) {
                         var that = this;
                         //存储callback事件
@@ -174,6 +175,7 @@ define(['jquery', 'bootstrap', 'toastr', 'layer', 'lang'], function ($, undefine
                                     // observer.disconnect();
                                 }
                             }
+                            that.successCallback && that.successCallback(index)
                         } catch (e) {
 
                         }
